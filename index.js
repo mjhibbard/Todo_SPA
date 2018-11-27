@@ -1,7 +1,8 @@
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
-    todoRoutes  = require("./routes/todos");
+    todoRoutes  = require("./routes/todos"),
+    PORT        = process.ENV || 8081;
 
 
 //App Config
@@ -16,16 +17,16 @@ app.get("/", function (req, res){
 
 app.use("/api/todos", todoRoutes);
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log("Todo App is Listening!!");
 });
 
 //Start the MongoDB environment
-//"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath "C:\Users\Mike\Documents\Alpha-Code\Adv WebDev\SPA Todo App\data"
+//"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath "C:\Users\Holly\Documents\Alpha Code\React\fullstack_todo_app\data"
 
 
 //Start MongoDB
-//"C:\Program Files\MongoDB\Server\3.6\bin\mongo.exe"
+//"C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
 
 //npm install -g nodemon
 // nodemon index.js
